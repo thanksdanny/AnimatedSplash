@@ -7,8 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
+
+
 
 @end
 
@@ -17,6 +20,20 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    ViewController *viewController = [[ViewController alloc] init];
+    self.window.rootViewController = viewController;
+    
+    self.imageView = [[UIImageView alloc] initWithFrame:self.window.frame];
+    self.imageView.image = [UIImage imageNamed:@"twitterscreen"];
+    [self.window addSubview:self.imageView];
+    
+    self.mask = [[CALayer alloc] init];
+    self.mask.contents = [UIImage imageNamed:@"twitter"];
+    self.mask.contentsGravity = kCAGravityResizeAspect;
+    self.mask
+    
     return YES;
 }
 

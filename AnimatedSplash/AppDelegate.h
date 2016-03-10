@@ -11,7 +11,8 @@
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, strong) CALayer *mask;
+@property (nonatomic, strong) UIImageView *imageView;
 
 @end
 
